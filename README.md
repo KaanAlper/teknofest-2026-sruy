@@ -2,6 +2,53 @@
 
 TEKNOFEST 2026 Sanayide Robotik Uygulamalar Yarışması (SRUY) için otonom forklift mobil robot. Fabrika içi lojistikte palet üzerindeki yükü, rota grafından geçerek alma noktasından bırakma noktasına taşır; fabrika PLC'si ile WiFi üzerinden haberleşir; kapı kontrolünü PLC ile el sıkışarak yönetir.
 
+## Hızlı başlangıç
+
+Sıfırdan çalıştırmak için gerekli her şey:
+
+**Önkoşullar:**
+- Docker + `docker compose` v2 (Arch/CachyOS: `sudo pacman -S docker docker-buildx && sudo systemctl enable --now docker && sudo usermod -aG docker $USER && newgrp docker`)
+- Python ≥3.11 + [uv](https://docs.astral.sh/uv/) (`curl -LsSf https://astral.sh/uv/install.sh | sh`)
+- ROS2 Humble ve Gazebo **gerek yok** — Docker image'ında geliyor. Robot teslim alınınca Jetson'a kurulur (bkz. [`docs/setup/ros2_jetson_kurulum.md`](docs/setup/ros2_jetson_kurulum.md))
+
+**Kurulum:**
+```bash
+git clone https://github.com/KaanAlper/teknofest-2026-sruy.git CargoBot && cd CargoBot
+
+# Python bağımlılıkları
+uv sync --all-extras
+# veya pip ile: pip install -r requirements.txt
+
+# Sim image build (ilk seferde 5-10 dk, ~5.4 GB)
+docker compose build ros2
+```
+
+**Çalıştırma:**
+
+| Komut | Ne yapar |
+|---|---|
+| `uv run python src/main.py` | GUI açar, mock akış konsola düşer (donanım yok) |
+| `uv run python src/main.py --headless` | GUI'siz, sadece log |
+| `docker compose up -d ros2` | Gazebo sim + slam_toolbox + Nav2 (headless). 15-20 sn sonra robot sahada |
+| `CARGOBOT_PROFILE=sim uv run python src/main.py --headless` | CargoBot çekirdeği sim'e bağlanır |
+| `docker compose up` | Tüm stack: PLC sim + Gazebo + cargobot çekirdek |
+
+**Sim çalışıyor mu?** Test:
+```bash
+docker exec -e ROS_DOMAIN_ID=42 cargobot-ros2 bash -c \
+  "source /opt/ros/humble/setup.bash && ros2 topic hz /scan"
+# Beklenen: ~50 Hz
+```
+
+**Sim'i görsel izlemek (Gazebo penceresi):**
+```bash
+xhost +local:docker
+docker exec -e DISPLAY=$DISPLAY cargobot-ros2 bash -c \
+  "source /opt/ros/humble/setup.bash && gzclient"
+```
+
+Detaylı sim rehberi: [`docs/setup/sim_kurulum.md`](docs/setup/sim_kurulum.md)
+
 ## Teknoloji
 
 - Python 3.12, asyncio
