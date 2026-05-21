@@ -4,10 +4,10 @@ from __future__ import annotations
 
 import pytest
 
-from cargobot.domain._shared.exceptions import SafetyViolation
-from cargobot.domain._shared.value_objects import Mode
-from cargobot.domain.safety.aggregate import SafetyState
-from cargobot.domain.safety.events import EmergencyStopActivated
+from domain._shared.exceptions import SafetyViolation
+from domain._shared.value_objects import Mode
+from domain.safety.aggregate import SafetyState
+from domain.safety.events import EmergencyStopActivated
 
 
 def test_estop_blocks_autonomous():

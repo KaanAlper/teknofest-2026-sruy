@@ -67,7 +67,7 @@ Decorator tabanlı otomatik kayıt (örn. `@on(QrCodeDetected)`) tercih edilmedi
 
 | ✅ | ❌ |
 |---|---|
-| `bus.subscribe(QrCodeDetected, handler)` | `from cargobot.domain.mission import Mission` (domain'ler arası import) |
+| `bus.subscribe(QrCodeDetected, handler)` | `from domain.mission import Mission` (domain'ler arası import) |
 | Aggregate event biriktirir, handler publish eder | Aggregate doğrudan `bus.publish(...)` |
 | Infrastructure adapter doğrudan event publish eder | Infrastructure → infrastructure import |
 | Yeni event eklerken kendi context'in `events.py`'sine ekle | Tüm event'leri tek `events.py` dosyasında topla |
@@ -83,8 +83,8 @@ Bir handler exception fırlatırsa diğerleri etkilenmez — log'a düşer. Bu s
 ## Test
 
 ```python
-from cargobot.application.bootstrap import App
-from cargobot.application.wiring import wire
+from application.bootstrap import App
+from application.wiring import wire
 
 app = App.build(plc=MockPlc(), motor=MockMotor())
 wire(app.bus, app.deps)

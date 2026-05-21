@@ -1,167 +1,94 @@
-# Kod Dizin Haritası
+# Kod dizin haritası
+
+`src/` altında her paket düz duruyor (Clonify yapısı gibi). Tek bir `cargobot/` kök paketi yok — import'lar doğrudan `domain.X`, `eventbus.X`, `application.X` şeklinde.
 
 ```
-src/cargobot/
+src/
+├── main.py                      # robot entry-point
 │
-├── __init__.py
-├── main.py                          # asyncio entry-point (robot tarafı)
-├── config.py                        # Pydantic config modelleri
+├── eventbus/                    # << sistemin omurgası, top-level paket
+│   └── async_bus.py             # AsyncEventBus
 │
-├── domain/                          # Saf domain — framework yok, IO yok
+├── domain/                      # saf — framework yok, IO yok
 │   │
 │   ├── _shared/
-│   │   ├── events.py                # DomainEvent base, correlation context
-│   │   ├── value_objects.py         # Pose, Velocity, NodeId, vb.
+│   │   ├── events.py            # DomainEvent base, correlation context
+│   │   ├── value_objects.py     # Pose, Velocity, NodeId, Mode
 │   │   └── exceptions.py
 │   │
-│   ├── mission/
-│   │   ├── __init__.py
-│   │   ├── aggregate.py             # Mission, MissionPlan
-│   │   ├── states.py                # MissionPhase enum + geçiş tablosu
-│   │   ├── events.py                # MissionStarted, LoadPicked, ...
-│   │   └── policies.py              # event reaction politikaları
-│   │
-│   ├── navigation/
-│   │   ├── __init__.py
-│   │   ├── aggregate.py             # RouteGraph
-│   │   ├── path_planner.py          # PathPlanner servisi (port)
-│   │   ├── path_follower.py
-│   │   ├── events.py
-│   │   └── value_objects.py
-│   │
-│   ├── perception/
-│   │   ├── __init__.py
-│   │   ├── detectors.py             # QrDetector, LineDetector, ObstacleDetector portları
-│   │   ├── scene.py
+│   ├── mission/                 # bounded context 1
+│   │   ├── aggregate.py
+│   │   ├── states.py            # MissionPhase + geçiş tablosu
 │   │   └── events.py
 │   │
-│   ├── safety/
-│   │   ├── __init__.py
-│   │   ├── aggregate.py             # SafetyState
-│   │   ├── policies.py              # invariant kontrolleri
+│   ├── navigation/              # 2
+│   │   ├── aggregate.py         # RouteGraph (Dijkstra)
+│   │   ├── value_objects.py     # Waypoint, Edge, Path, MapMetadata
 │   │   └── events.py
 │   │
-│   ├── fleet_io/
-│   │   ├── __init__.py
-│   │   ├── session.py               # PlcSession aggregate
-│   │   ├── messages.py              # Domain mesaj tipleri (protokol-bağımsız)
-│   │   ├── gateway.py               # PlcGateway abstract port
+│   ├── perception/              # 3
+│   │   ├── detectors.py         # QrDetector, LineDetector, ObstacleDetector port'ları
 │   │   └── events.py
 │   │
-│   └── telemetry/
-│       ├── __init__.py
-│       ├── snapshot.py              # RobotSnapshot read-model
-│       ├── projector.py             # event'lerden snapshot üreten projeksiyon
-│       └── recorder.py
+│   ├── safety/                  # 4
+│   │   ├── aggregate.py         # SafetyState
+│   │   └── events.py
+│   │
+│   ├── fleet_io/                # 5
+│   │   ├── gateway.py           # PlcGateway port
+│   │   ├── messages.py
+│   │   └── events.py
+│   │
+│   └── telemetry/               # 6
+│       └── snapshot.py          # RobotSnapshot read-model
 │
-├── application/                     # Use case / orkestrasyon
-│   ├── __init__.py
-│   ├── commands.py                  # StartMissionCommand, vb.
-│   ├── handlers/                    # her handler bir factory: closure ile deps + bus alır
+├── application/                 # use case / orkestrasyon
+│   ├── commands.py
+│   ├── handlers/                # her handler bir factory: closure ile deps + bus alır
 │   │   ├── mission_handlers.py
 │   │   ├── navigation_handlers.py
 │   │   ├── safety_handlers.py
 │   │   └── fleet_handlers.py
-│   ├── wiring.py                    # << kim hangi event'i dinler — tek liste
-│   └── bootstrap.py                 # App.build: bus + deps composition root
+│   ├── wiring.py                # << kim hangi event'i dinler — tek liste
+│   └── bootstrap.py             # App.build composition root
 │
-├── infrastructure/                  # Adapter'lar (IO, framework, donanım)
-│   │
-│   ├── bus/
-│   │   ├── __init__.py
-│   │   └── async_bus.py             # AsyncEventBus implementasyonu
-│   │
+├── infrastructure/              # adapter'lar (IO, framework, donanım)
 │   ├── plc/
-│   │   ├── __init__.py
-│   │   ├── modbus_adapter.py        # pymodbus
-│   │   ├── opcua_adapter.py         # asyncua
-│   │   ├── raw_tcp_adapter.py
-│   │   └── mock_adapter.py          # test/sim için
-│   │
-│   ├── lidar/
-│   │   ├── ros2_subscriber.py       # /scan -> Perception
-│   │   └── mock_lidar.py
-│   │
-│   ├── camera/
-│   │   ├── opencv_camera.py
-│   │   ├── ros2_image_sub.py
-│   │   ├── qr_detector.py           # pyzbar wrapper
-│   │   ├── aruco_detector.py
-│   │   └── line_detector.py
-│   │
+│   │   ├── mock_adapter.py
+│   │   ├── modbus_adapter.py    # (plan: pymodbus)
+│   │   └── opcua_adapter.py     # (plan: asyncua)
+│   ├── lidar/                   # ROS2 /scan subscriber
+│   ├── camera/                  # OpenCV + pyzbar + ArUco
 │   ├── motor/
-│   │   ├── ros2_cmd_vel.py
-│   │   ├── serial_driver.py         # ESP32/STM32 ile UART
-│   │   └── forklift_servo.py
-│   │
-│   ├── storage/
-│   │   ├── map_store.py             # pgm/yaml dosyaları
-│   │   ├── route_store.py
-│   │   └── telemetry_store.py       # jsonl
-│   │
-│   └── ros2/
-│       ├── __init__.py
-│       ├── node.py                  # tek ROS2 düğümü (rclpy)
-│       └── bridges.py               # Domain event ↔ ROS2 topic eşlemeleri
+│   │   └── mock_motor.py
+│   └── storage/                 # map_store, route_store, telemetry_store
 │
-└── interface/                       # Dış dünyaya ucu
-    ├── cli/
-    │   └── cli.py                   # `cargobot --build-map`, vb.
-    ├── api/
-    │   ├── ws_server.py             # WebSocket sunucusu (GUI bağlanır)
-    │   ├── ws_codec.py              # JSON serializer
-    │   └── rest_app.py              # opsiyonel REST
-    └── qml_bridge/
-        └── notes.md                 # GUI ile sözleşme dökümanı
-
-
-src/ui/                              # PySide6 + QML uygulaması
+├── interface/                   # dış dünyaya uçlar
+│   ├── api/                     # WebSocket sunucusu
+│   ├── cli/
+│   └── qml_bridge/
 │
-├── __init__.py
-├── main.py                          # QGuiApplication entry-point (GUI tarafı)
-├── app_context.py                   # QML için singleton context
-│
-├── viewmodels/
-│   ├── robot_viewmodel.py           # QObject — snapshot binding
-│   ├── mission_viewmodel.py
-│   ├── plc_log_model.py             # QAbstractListModel
-│   ├── map_viewmodel.py
-│   ├── joystick_viewmodel.py
-│   └── connection.py                # WebSocket istemcisi
-│
-├── qml/
-│   ├── main.qml
-│   ├── pages/
-│   │   ├── DashboardPage.qml
-│   │   ├── MapPage.qml
-│   │   ├── PlcLogPage.qml
-│   │   ├── ManualControlPage.qml
-│   │   └── SettingsPage.qml
-│   ├── components/
-│   │   ├── StatusBadge.qml
-│   │   ├── KeyValueRow.qml
-│   │   ├── BatteryGauge.qml
-│   │   ├── EmergencyBanner.qml
-│   │   ├── Joystick.qml
-│   │   ├── MapCanvas.qml
-│   │   └── PlcMessageItem.qml
-│   └── assets/
-│       ├── icons/
-│       └── fonts/
-│
-└── resources/
-    ├── resources.qrc                # Qt resource file
-    └── theme.json
+└── ui/                          # PySide6 + QML uygulaması
+    ├── main.py                  # QGuiApplication entry-point
+    ├── app_context.py           # QML singleton köprü (WS istemcisi)
+    ├── viewmodels/
+    ├── qml/
+    │   ├── main.qml
+    │   ├── pages/
+    │   ├── components/
+    │   └── assets/
+    └── resources/
 ```
 
-## Modül-Modül Bağımlılık Sözleşmesi
+## Bağımlılık sözleşmesi
 
 | Katman | Bağımlı olabileceği |
 |---|---|
-| `domain/*` | sadece `domain/_shared`, standart kütüphane, **dış paket yok** |
-| `application/*` | `domain/*` |
-| `infrastructure/*` | `domain/*` (sadece port arayüzü için), dış paketler |
-| `interface/*` | `application/*`, `domain/*` read-model |
-| `ui/*` | sadece `interface/api` (WebSocket sözleşmesi), domain'i direkt **import etmez** |
+| `domain/*` | sadece `domain/_shared`, standart kütüphane. Dış paket yok. |
+| `application/*` | `domain/*`, `eventbus` |
+| `infrastructure/*` | `domain/*` (sadece port arayüzü), `eventbus`, dış paketler |
+| `interface/*` | `application/*`, `domain/*` (read-model) |
+| `ui/*` | sadece `interface/api` (WebSocket sözleşmesi); domain'i doğrudan import etmez |
+| `eventbus` | hiçbir şeye — base sınıf `domain/_shared/events.py`'den okur ama tip içe almak için, döngüsel değil |
 
-> Çift yönlü değil — `domain` `infrastructure`'ı asla import etmez. DIP (Dependency Inversion).
+`domain` `infrastructure`'ı asla import etmez — DIP. Port'lar domain tarafında tanımlı, adapter'lar onları implemente eder.

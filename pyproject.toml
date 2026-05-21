@@ -1,11 +1,10 @@
 [project]
 name = "cargobot"
 version = "0.1.0"
-description = "TEKNOFEST 2026 SRUY — Otonom Forklift Mobil Robot"
+description = "TEKNOFEST 2026 SRUY — otonom forklift mobil robot"
 readme = "README.md"
 requires-python = ">=3.11"
 authors = [{ name = "CargoBot Takımı" }]
-license = { text = "Proprietary (yarışma dönemi)" }
 
 dependencies = [
     "pydantic>=2.7",
@@ -23,10 +22,6 @@ dependencies = [
 ]
 
 [project.optional-dependencies]
-ros2 = [
-    # rclpy resmi PyPI'da değil; ROS2 Humble apt paketi ile gelir
-    # ros-humble-* paketleri Ubuntu 22.04 üzerine kurulur
-]
 dev = [
     "pytest>=8.0",
     "pytest-asyncio>=0.23",
@@ -36,12 +31,9 @@ dev = [
     "mypy>=1.10",
     "types-PyYAML",
 ]
-sim = [
-    # Gazebo entegrasyonu için ek paketler (apt'tan gelir)
-]
 
 [project.scripts]
-cargobot = "cargobot.interface.cli.cli:main"
+cargobot = "main:main"
 cargobot-gui = "ui.main:main"
 
 [build-system]
@@ -49,27 +41,36 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [tool.hatch.build.targets.wheel]
-packages = ["src/cargobot", "src/ui"]
+packages = [
+    "src/domain",
+    "src/application",
+    "src/eventbus",
+    "src/infrastructure",
+    "src/interface",
+    "src/ui",
+]
+
+[tool.hatch.build.targets.wheel.sources]
+"src" = ""
 
 [tool.ruff]
 line-length = 100
 target-version = "py311"
+src = ["src"]
 
 [tool.ruff.lint]
-select = [
-    "E", "F", "W", "I", "N", "UP", "B", "C4", "SIM", "RET", "ARG",
-    "PL", "PERF", "RUF",
-]
+select = ["E", "F", "W", "I", "N", "UP", "B", "C4", "SIM", "RET", "ARG", "PL", "PERF", "RUF"]
 ignore = ["PLR0913"]
 
 [tool.mypy]
 python_version = "3.11"
 strict = true
 plugins = ["pydantic.mypy"]
-files = ["src/cargobot"]
+mypy_path = "src"
+files = ["src"]
 
 [[tool.mypy.overrides]]
-module = ["cv2", "pyzbar.*", "rclpy.*"]
+module = ["cv2", "pyzbar.*", "rclpy.*", "websockets.*", "pymodbus.*", "asyncua.*"]
 ignore_missing_imports = true
 
 [tool.pytest.ini_options]

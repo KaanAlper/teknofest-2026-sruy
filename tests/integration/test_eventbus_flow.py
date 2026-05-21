@@ -6,13 +6,13 @@ import asyncio
 
 import pytest
 
-from cargobot.application.bootstrap import App
-from cargobot.application.wiring import wire
-from cargobot.domain.fleet_io.events import PickAssignmentReceived
-from cargobot.domain.mission.events import MissionPhaseChanged, MissionStarted
-from cargobot.domain.mission.states import MissionPhase
-from cargobot.infrastructure.motor.mock_motor import MockMotor
-from cargobot.infrastructure.plc.mock_adapter import MockPlc
+from application.bootstrap import App
+from application.wiring import wire
+from domain.fleet_io.events import PickAssignmentReceived
+from domain.mission.events import MissionPhaseChanged, MissionStarted
+from domain.mission.states import MissionPhase
+from infrastructure.motor.mock_motor import MockMotor
+from infrastructure.plc.mock_adapter import MockPlc
 
 
 @pytest.mark.asyncio

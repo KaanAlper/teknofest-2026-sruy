@@ -16,10 +16,17 @@ TEKNOFEST 2026 Sanayide Robotik Uygulamalar Yarışması (SRUY) için otonom for
 
 ```
 docs/    şartname, mimari, plan, raporlar, görsel tasarım
-src/     cargobot/ ve ui/ paketleri
+src/
+  domain/         bounded contextler (mission, navigation, perception, safety, fleet_io, telemetry)
+  application/    handler factory'leri + wiring + bootstrap
+  eventbus/       AsyncEventBus — sistemin omurgası, top-level paket
+  infrastructure/ PLC, LIDAR, kamera, motor, storage adapter'leri
+  interface/      CLI / WS API / QML bridge
+  ui/             PySide6 + QML operatör arayüzü
+  main.py         robot entry-point
 hardware/  BOM, şematik, CAD
-sim/     Gazebo dünyaları
-tests/   unit + integration + sim
+sim/       Gazebo dünyaları
+tests/     unit + integration + sim
 ```
 
 ## Mimari özet

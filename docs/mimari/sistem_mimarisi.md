@@ -22,9 +22,9 @@ asyncio tek event loop; bloklayan IO (LIDAR sürücüsü vb.) executor thread'le
 │                          ┌─────────────────▼────────────────┐    │
 │                          │     CargoBot Robot (Jetson)      │    │
 │                          │   ┌──────────────────────────┐  │    │
-│                          │   │  cargobot/domain (DDD)   │  │    │
-│                          │   │  cargobot/application    │  │    │
-│                          │   │  cargobot/infrastructure │  │    │
+│                          │   │  domain   application    │  │    │
+│                          │   │  eventbus infrastructure │  │    │
+│                          │   │  interface/api (WS)      │  │    │
 │                          │   └──────────────────────────┘  │    │
 │                          │       │      │      │           │    │
 │                          │   LIDAR  Kamera  Motorlar       │    │
@@ -78,7 +78,7 @@ Tek bir in-process **event bus** (asyncio Queue tabanlı, `aiopubsub` veya custo
 
 **Avantaj:** Test edilirken event bus mock değiştirilir; gerçek koşumda Redis/MQTT'ye geçebilir.
 
-**Bus implementasyonu:** `cargobot.infrastructure.bus.AsyncEventBus`
+**Bus implementasyonu:** `eventbus.AsyncEventBus`
 - `publish(event: DomainEvent)`
 - `subscribe(event_type, handler)`
 - `unsubscribe(handler)`

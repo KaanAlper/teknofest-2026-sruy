@@ -4,10 +4,10 @@ from __future__ import annotations
 
 import pytest
 
-from cargobot.domain._shared.exceptions import InvalidPhaseTransition
-from cargobot.domain.mission.aggregate import Mission
-from cargobot.domain.mission.events import LoadPicked, MissionPhaseChanged, MissionStarted
-from cargobot.domain.mission.states import MissionPhase
+from domain._shared.exceptions import InvalidPhaseTransition
+from domain.mission.aggregate import Mission
+from domain.mission.events import LoadPicked, MissionPhaseChanged, MissionStarted
+from domain.mission.states import MissionPhase
 
 
 def test_new_mission_publishes_started_event():

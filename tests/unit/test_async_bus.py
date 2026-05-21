@@ -6,8 +6,8 @@ from dataclasses import dataclass
 
 import pytest
 
-from cargobot.domain._shared.events import DomainEvent
-from cargobot.infrastructure.bus.async_bus import AsyncEventBus
+from domain._shared.events import DomainEvent
+from eventbus.async_bus import AsyncEventBus
 
 
 @dataclass(frozen=True, kw_only=True)

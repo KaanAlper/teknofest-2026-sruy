@@ -4,10 +4,10 @@ from __future__ import annotations
 
 import pytest
 
-from cargobot.domain._shared.exceptions import RouteNotFound
-from cargobot.domain._shared.value_objects import Pose
-from cargobot.domain.navigation.aggregate import RouteGraph
-from cargobot.domain.navigation.value_objects import Edge, NodeType, Waypoint
+from domain._shared.exceptions import RouteNotFound
+from domain._shared.value_objects import Pose
+from domain.navigation.aggregate import RouteGraph
+from domain.navigation.value_objects import Edge, NodeType, Waypoint
 
 
 def _wp(node_id: str, type_: NodeType = NodeType.WAYPOINT) -> Waypoint:

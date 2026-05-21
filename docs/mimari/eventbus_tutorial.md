@@ -16,12 +16,12 @@ Hiçbir modül diğerini import etmiyor. Aralarındaki tek köprü: event bus.
 
 Event sınıfı kendi context'inin klasöründe yaşar. `QrCodeDetected` perception'da, `MissionPhaseChanged` mission'da. Tek dosyada toplamıyoruz.
 
-`src/cargobot/domain/perception/events.py`:
+`src/domain/perception/events.py`:
 
 ```python
 from dataclasses import dataclass
-from cargobot.domain._shared.events import DomainEvent
-from cargobot.domain._shared.value_objects import Pose
+from domain._shared.events import DomainEvent
+from domain._shared.value_objects import Pose
 
 @dataclass(frozen=True, kw_only=True)
 class QrCodeDetected(DomainEvent):
@@ -34,14 +34,14 @@ class QrCodeDetected(DomainEvent):
 
 # 2. Yayınlama — kameradan gelen frame'i işleyen adapter
 
-`src/cargobot/infrastructure/camera/qr_publisher.py`:
+`src/infrastructure/camera/qr_publisher.py`:
 
 ```python
 import cv2
 from pyzbar.pyzbar import decode
-from cargobot.domain._shared.value_objects import Pose
-from cargobot.domain.perception.events import QrCodeDetected
-from cargobot.infrastructure.bus import AsyncEventBus
+from domain._shared.value_objects import Pose
+from domain.perception.events import QrCodeDetected
+from eventbus import AsyncEventBus
 
 class QrPublisher:
     def __init__(self, bus: AsyncEventBus):
@@ -62,7 +62,7 @@ Adapter event objesini doldurup `bus.publish(event)` çağırıyor. Kimin dinled
 
 # 3. Abone olma — mission handler
 
-`src/cargobot/application/handlers/mission_handlers.py`:
+`src/application/handlers/mission_handlers.py`:
 
 ```python
 def on_qr_detected(bus):
@@ -83,7 +83,7 @@ Factory deseni: dış bağımlılıkları (burada `bus`) closure'a alıp asıl h
 
 # 4. Bağlantı — wiring tek listede
 
-`src/cargobot/application/wiring.py` içinde tek satır:
+`src/application/wiring.py` içinde tek satır:
 
 ```python
 bus.subscribe(QrCodeDetected, mission_handlers.on_qr_detected(bus))

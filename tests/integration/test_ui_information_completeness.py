@@ -6,7 +6,7 @@ release alınamaz.
 
 from __future__ import annotations
 
-from cargobot.domain.telemetry.snapshot import RobotSnapshot
+from domain.telemetry.snapshot import RobotSnapshot
 
 MANDATORY_FIELDS = {
     "status",
