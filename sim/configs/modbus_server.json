@@ -1,0 +1,23 @@
+{
+  "server": {
+    "listenerAddress": "0.0.0.0",
+    "listenerPort": 5020,
+    "tlsParams": null,
+    "logging": {
+      "format": "%(asctime)s %(levelname)-5s %(message)s",
+      "logLevel": "INFO"
+    },
+    "registers": {
+      "zeroMode": true,
+      "initializeUndefinedRegisters": true
+    }
+  },
+  "registerValues": [
+    { "register": "holdingRegister", "address": 100, "value": 0, "description": "pickup_node" },
+    { "register": "holdingRegister", "address": 101, "value": 0, "description": "dropoff_node" },
+    { "register": "holdingRegister", "address": 200, "value": 0, "description": "door_request" },
+    { "register": "holdingRegister", "address": 201, "value": 0, "description": "door_grant" },
+    { "register": "holdingRegister", "address": 300, "value": 0, "description": "load_picked_ack" },
+    { "register": "holdingRegister", "address": 301, "value": 0, "description": "load_dropped_ack" }
+  ]
+}

@@ -11,15 +11,11 @@ ApplicationWindow {
     color: "#0d1117"
 
     property var snapshot: AppContext.snapshot
-    property bool connected: AppContext.connected
 
     Connections {
         target: AppContext
         function onSnapshotChanged() {
             root.snapshot = AppContext.snapshot
-        }
-        function onConnectionStateChanged() {
-            root.connected = AppContext.connected
         }
     }
 
@@ -30,7 +26,8 @@ ApplicationWindow {
             spacing: 16
             Rectangle {
                 width: 12; height: 12; radius: 6
-                color: root.connected ? "#3fb950" : "#f85149"
+                // PLC'ye değil, görsel olarak "yaşıyor" göstergesi
+                color: root.snapshot.plc && root.snapshot.plc.connected ? "#3fb950" : "#f85149"
             }
             Label {
                 text: root.snapshot.status || "—"

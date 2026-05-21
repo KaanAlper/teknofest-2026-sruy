@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<sdf version="1.7">
+  <world name="cargobot_field">
+    <!-- TEKNOFEST SRUY sahası temsili sim. URDF ve PLC kapı modeli ileride. -->
+    <include><uri>model://sun</uri></include>
+    <include><uri>model://ground_plane</uri></include>
+
+    <!-- Örnek bir engel -->
+    <model name="palette_a">
+      <static>true</static>
+      <pose>3 1 0 0 0 0</pose>
+      <link name="link">
+        <visual name="visual">
+          <geometry><box><size>0.4 0.4 0.1</size></box></geometry>
+          <material><ambient>0.6 0.4 0.2 1</ambient></material>
+        </visual>
+        <collision name="col">
+          <geometry><box><size>0.4 0.4 0.1</size></box></geometry>
+        </collision>
+      </link>
+    </model>
+  </world>
+</sdf>

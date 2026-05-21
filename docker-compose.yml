@@ -1,0 +1,58 @@
+# CargoBot lokal sim ortamı.
+#
+# Kullanım:
+#   docker compose up         # ROS2 + Gazebo + Nav2 + slam_toolbox sahnesi
+#   docker compose run --rm cargobot   # mock akış (hostta da koşar)
+#
+# X11 görselleştirme için host'ta:
+#   xhost +local:docker
+#
+# Not: ROS2 Humble image'i ilk açılışta ~1 GB indirir.
+
+services:
+  ros2:
+    image: osrf/ros:humble-desktop-full
+    container_name: cargobot-ros2
+    network_mode: host                # /scan, /cmd_vel topic'leri için
+    environment:
+      - DISPLAY=${DISPLAY}
+      - QT_X11_NO_MITSHM=1
+      - ROS_DOMAIN_ID=42
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix:rw
+      - ./sim:/workspace/sim
+      - ./hardware/urdf:/workspace/urdf:ro
+    command: >
+      bash -c "
+      source /opt/ros/humble/setup.bash &&
+      apt-get update && apt-get install -y --no-install-recommends
+        ros-humble-slam-toolbox
+        ros-humble-nav2-bringup
+        ros-humble-navigation2
+        ros-humble-gazebo-ros-pkgs
+        ros-humble-robot-localization &&
+      ros2 launch sim/launch/cargobot_world.launch.py
+      "
+
+  plc-sim:
+    image: oitc/modbus-server:latest
+    container_name: cargobot-plc-sim
+    ports:
+      - "5020:5020"
+    volumes:
+      - ./sim/configs/modbus_server.json:/server_config/server_config.json:ro
+
+  cargobot:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: cargobot-core
+    network_mode: host
+    environment:
+      - ROS_DOMAIN_ID=42
+      - PLC_HOST=localhost
+      - PLC_PORT=5020
+    depends_on:
+      - ros2
+      - plc-sim
+    command: ["python", "src/main.py", "--headless"]
