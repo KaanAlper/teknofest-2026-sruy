@@ -49,18 +49,16 @@ def main() -> None:
 
 async def _run_headless() -> None:
     from application.bootstrap import App
+    from application.profile import Profile
     from application.wiring import wire
     from domain.fleet_io.events import PlcConnected
     from domain.telemetry.projector import TelemetryProjector
-    from infrastructure.motor.mock_motor import MockMotor
-    from infrastructure.plc.mock_adapter import MockPlc
     from application.demo import run_demo_scenario
 
     log = logging.getLogger("cargobot")
 
-    plc = MockPlc()
-    motor = MockMotor()
-    app = App.build(plc=plc, motor=motor)
+    loop = asyncio.get_running_loop()
+    app = await App.build_from_profile(asyncio_loop=loop)
     wire(app.bus, app.deps)
 
     async def log_snapshot(snap):
@@ -75,19 +73,26 @@ async def _run_headless() -> None:
     projector = TelemetryProjector(app.bus, sink=log_snapshot)
     projector.install()
 
-    await plc.connect()
-    await app.bus.publish(PlcConnected(aggregate_id="plc", host="mock", port=0, protocol="mock"))
+    # PlcConnected event'i — protokol bilgisi profile'dan gelir
+    await app.bus.publish(PlcConnected(
+        aggregate_id="plc",
+        host=app.config.plc_host or "mock",
+        port=app.config.plc_port,
+        protocol="modbus" if app.config.profile != Profile.MOCK else "mock",
+    ))
 
-    asyncio.create_task(run_demo_scenario(app.bus, projector))
+    if app.config.run_demo:
+        asyncio.create_task(run_demo_scenario(app.bus, projector))
+    else:
+        log.info("Demo akış kapalı (profile=%s) — gerçek PLC akışı bekleniyor", app.config.profile.value)
 
     stop = asyncio.Event()
-    loop = asyncio.get_running_loop()
     for sig in (signal.SIGINT, signal.SIGTERM):
         loop.add_signal_handler(sig, stop.set)
 
     log.info("Headless mod — Ctrl+C ile dur")
     await stop.wait()
-    await plc.disconnect()
+    await app.deps.plc.disconnect()
 
 
 if __name__ == "__main__":
