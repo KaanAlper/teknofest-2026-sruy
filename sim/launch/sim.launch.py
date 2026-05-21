@@ -1,6 +1,8 @@
 """Tam sim akışı: Gazebo + robot spawn + slam_toolbox + Nav2.
 
-Kullanım (ros2 humble image içinde):
+xacro Command substitution ile runtime'da URDF üretilir — ayrıca dosya yazımı yok.
+
+Kullanım (cargobot/ros2-sim image içinde):
     ros2 launch /workspace/sim/launch/sim.launch.py
 """
 
@@ -12,14 +14,16 @@ from launch.actions import (
 )
 from launch.event_handlers import OnProcessStart
 from launch.launch_description_sources import PythonLaunchDescriptionSource
+from launch.substitutions import Command, FindExecutable
 from launch_ros.actions import Node
+from launch_ros.parameter_descriptions import ParameterValue
 from ament_index_python.packages import get_package_share_directory
 import os
 
 
 def generate_launch_description():
     world_path = "/workspace/sim/worlds/teknofest_saha.world"
-    urdf_path = "/workspace/hardware/urdf/cargobot.urdf"  # xacro'dan üretilmiş
+    xacro_path = "/workspace/hardware/urdf/cargobot.urdf.xacro"
 
     # 1) Gazebo
     gazebo = ExecuteProcess(
@@ -32,13 +36,15 @@ def generate_launch_description():
         output="screen",
     )
 
-    # 2) robot_description
-    with open(urdf_path) as f:
-        robot_desc = f.read()
+    # 2) URDF — xacro runtime'da çalışır
+    robot_description = ParameterValue(
+        Command([FindExecutable(name="xacro"), " ", xacro_path]),
+        value_type=str,
+    )
     robot_state_pub = Node(
         package="robot_state_publisher",
         executable="robot_state_publisher",
-        parameters=[{"use_sim_time": True, "robot_description": robot_desc}],
+        parameters=[{"use_sim_time": True, "robot_description": robot_description}],
         output="screen",
     )
 
@@ -46,8 +52,11 @@ def generate_launch_description():
     spawn = Node(
         package="gazebo_ros",
         executable="spawn_entity.py",
-        arguments=["-entity", "cargobot", "-topic", "robot_description",
-                   "-x", "-5", "-y", "-3", "-z", "0.1"],
+        arguments=[
+            "-entity", "cargobot",
+            "-topic", "robot_description",
+            "-x", "-5", "-y", "-3", "-z", "0.1",
+        ],
         output="screen",
     )
     spawn_after_gazebo = RegisterEventHandler(
@@ -66,6 +75,8 @@ def generate_launch_description():
             "map_frame": "map",
             "scan_topic": "/scan",
             "mode": "mapping",
+            "resolution": 0.05,
+            "minimum_travel_distance": 0.5,
         }],
         output="screen",
     )

@@ -1,0 +1,28 @@
+# ROS2 Humble + Gazebo Classic + slam_toolbox + Nav2 + xacro
+# Bir kez build edilir, sonra `docker compose up` saniyeler içinde açılır.
+
+FROM osrf/ros:humble-desktop-full
+
+ENV DEBIAN_FRONTEND=noninteractive
+ENV ROS_DOMAIN_ID=42
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+      ros-humble-slam-toolbox \
+      ros-humble-nav2-bringup \
+      ros-humble-navigation2 \
+      ros-humble-gazebo-ros-pkgs \
+      ros-humble-gazebo-ros2-control \
+      ros-humble-robot-localization \
+      ros-humble-xacro \
+      ros-humble-cv-bridge \
+      ros-humble-image-transport \
+    && rm -rf /var/lib/apt/lists/*
+
+WORKDIR /workspace
+
+# X11 paylaşımı için runtime'da DISPLAY env geçer
+ENV QT_X11_NO_MITSHM=1
+
+# Default: launch dosyasını koş (xacro launch içinde çalışıyor)
+CMD ["bash", "-c", "source /opt/ros/humble/setup.bash && \
+     ros2 launch /workspace/sim/launch/sim.launch.py"]

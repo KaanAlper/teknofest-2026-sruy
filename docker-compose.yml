@@ -23,7 +23,10 @@ services:
       - ./sim/configs/modbus_server.json:/server_config/server_config.json:ro
 
   ros2:
-    image: osrf/ros:humble-desktop-full
+    build:
+      context: .
+      dockerfile: sim/Dockerfile.sim
+    image: cargobot/ros2-sim:humble
     container_name: cargobot-ros2
     network_mode: host
     environment:
@@ -34,21 +37,6 @@ services:
       - /tmp/.X11-unix:/tmp/.X11-unix:rw
       - ./sim:/workspace/sim:ro
       - ./hardware:/workspace/hardware:ro
-    command: >
-      bash -c "
-      apt-get update &&
-      apt-get install -y --no-install-recommends
-        ros-humble-slam-toolbox
-        ros-humble-nav2-bringup
-        ros-humble-navigation2
-        ros-humble-gazebo-ros-pkgs
-        ros-humble-robot-localization
-        ros-humble-xacro &&
-      source /opt/ros/humble/setup.bash &&
-      xacro /workspace/hardware/urdf/cargobot.urdf.xacro > /tmp/cargobot.urdf &&
-      cp /tmp/cargobot.urdf /workspace/hardware/urdf/cargobot.urdf 2>/dev/null || true &&
-      ros2 launch /workspace/sim/launch/sim.launch.py
-      "
 
   cargobot:
     build:
