@@ -1,0 +1,41 @@
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+.venv/
+venv/
+.uv/
+.mypy_cache/
+.ruff_cache/
+.pytest_cache/
+.coverage
+htmlcov/
+dist/
+build/
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+
+# ROS2 / robotik
+build/
+install/
+log/
+*.bag
+*.db3
+*.active
+
+# Üretim sırrı
+*.env
+.env.local
+
+# Geçici
+docs/sartname/*.pdf
+!docs/sartname/2026_SRUY_TR.txt
+docs/test/saha_log/
+docs/raporlar/teslim/
+
+# QML cache
+*.qmlc
+*.jsc

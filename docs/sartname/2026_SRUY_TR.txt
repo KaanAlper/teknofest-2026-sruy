@@ -1,0 +1,765 @@
+I
+İÇİNDEKİLER
+İÇİNDEKİLER ...........................................................................................................................1
+TABLOLAR ...............................................................................................................................2
+ŞEKİLLER ................................................................................................................................3
+VERSİYONLAR .........................................................................................................................4
+1.     YARIŞMANIN AMACI VE KAPSAMI ......................................................................................5
+2.     YARIŞMAYA KATILMA KOŞULLARI VE DETAYLARI ................................................................5
+     2.2.          Danışman Yükümlülükleri .....................................................................................7
+     2.3.          Süreç Bilgileri .......................................................................................................7
+     2.4.          Başvuru Esasları ..................................................................................................8
+3.     YARIŞMA KATEGORİSİ .......................................................................................................8
+     3.1.          Yarışma Kategorisi ................................................................................................8
+     3.1.1.        Görevler...............................................................................................................9
+4.     YARIŞMA ALANI VE YARIŞMA SENARYOSU ....................................................................... 10
+5.     YARIŞMA DETAYLARI ....................................................................................................... 15
+6.     YARIŞMA TAKVİMİ, PUANLAMA, DEĞERLENDİRME........................................................... 15
+     6.1.1.        Teknik Yeterlilik Formu ........................................................................................ 16
+     6.1.2.        Proje Detay Raporu ............................................................................................ 17
+     6.1.3.        Hareket-Kabiliyet Videosu .................................................................................. 17
+6.2.        Yarışmanın Puanlaması .............................................................................................. 18
+     6.2.1.        Form, Rapor ve Video Puanlaması (%30) ............................................................. 18
+     6.2.2.        Prototip ve Sunum Puanlaması ........................................................................... 18
+     6.2.3.        Ceza Puanları ..................................................................................................... 19
+     6.2.4.        Ekstra Puanlar .................................................................................................... 19
+7.     ÖDÜLLER ....................................................................................................................... 20
+8.     İLETİŞİM ......................................................................................................................... 21
+9.     GENEL KURALLAR .......................................................................................................... 21
+10.         ETİK KURALLAR .......................................................................................................... 21
+Sorumluluk Beyanı ................................................................................................................ 21
+
+
+
+
+                                                                     1
+TABLOLAR
+Tablo 1 Versiyonlar Tablosu ......................................................................................................4
+Tablo 2 Yarışma Takvimi ......................................................................................................... 16
+Tablo 3 Puan Dağılımı............................................................................................................. 18
+Tablo 4 Final Değerlendirme Kriterleri Puan Dağılımı ............................................................... 19
+Tablo 5 Ödüller Tablosu.......................................................................................................... 20
+
+
+
+
+                                                                 2
+ŞEKİLLER
+Şekil 1: Yarışma alanı şematik gösterimi ................................................................................. 10
+Şekil 2: Yük ve palet ölçüleri ................................................................................................... 13
+Şekil 3: Otonom forklift mobil robot maksimum ölçüleri .......................................................... 14
+Şekil 4: Yarışma alanı üstten görünüş ..................................................................................... 14
+Şekil 5: Yarışma alanı perspektif görünüş ................................................................................ 15
+
+
+
+
+                                                                 3
+VERSİYONLAR
+Tablo 1 Versiyonlar Tablosu
+
+
+            VERSİYON            TARİH              Açıklama
+                V1.0          05.05.2026   TEKNOFEST 2026 İlk Versiyon
+
+
+
+
+                                  4
+1. YARIŞMANIN AMACI VE KAPSAMI
+İmalat sanayinde dijitalleşme, değer zincirinin her aşamasında etkinlik ve verimlilik
+artışları ile değer oluşturma potansiyeli taşımaktadır. İmalat sanayinin dijital dönüşüm
+sürecinde, üretimde rekabet edebilir pozisyonda olabilmek için dijital teknolojilerden
+verimli, etkili ve etkin bir şekilde faydalanılması gerekmektedir. Bu süreçte “yapay zekâ,
+otonom robotlar, büyük veri ve ileri analitik, bulut bilişim, artırılmış ve sanal gerçeklik,
+nesnelerin interneti, eklemeli imalat, yeni nesil akıllı sensör teknolojileri ve siber güvenlik”
+gibi teknolojiler katma değerin, verimliliğin, kârlılığın, kalitenin ve benzeri birçok unsurun
+en üst seviyeye çıkarılmasında öncü teknolojiler olarak görülmektedir.
+İmalat sanayinin dijitalleşmesi konusu dikkate alındığında bu alanda bugünden bazı
+alanlara yatırım yapılması çerçevesinde TEKNOFEST, Sanayide Robotik Uygulamalar
+Yarışmasını düzenleyerek ulaşılması gereken nokta için bir vizyon geliştirilmesine katkıda
+bulunmaktadır. TEKNOFEST ile geliştirilen bakış açısında, bu yıl ve bundan sonraki yıllarda
+ülkemizde ve dünyada gelinen noktalarda Sanayide Robotik Uygulamaları yarışma
+kapsamında değerlendirmeye alınacaktır.
+Sanayide Robotik Uygulamalar Yarışması kapsamında imalat sanayinin dijitalleşmesi ile
+üretim, planlama, stok takip, tedarik, pazarlama, yönetim ve karar destek, lojistik, enerji
+kullanımı gibi üretim süreçlerinde verimlilik, kalite, hız, esneklik artışı sağlanarak
+ülkemizin rekabetçiliğinin artırılması diğer taraftan ihtiyaç duyulan dijital teknolojilerin
+yerli ve milli imkânlarla üretilmesi beklenmektedir. Sanayide yaşanan dijital dönüşüm ile
+birlikte robotların imalat süreçlerinde kullanılması her geçen gün daha fazla
+yaygınlaşmaktadır.
+Bu amaca uygun olarak yarışmada fabrika iç lojistiğinde veya depolarda kullanılabilecek
+şekilde yollarda hareket edip, belirli yükleri noktadan noktaya taşıyan ve otonom çalışan
+bir güdümlü robot yapılması hedeflenmektedir.
+
+2. YARIŞMAYA KATILMA KOŞULLARI VE DETAYLARI
+   •   Yarışmaya, Türkiye ve yurt dışında öğrenim gören tüm lise (Açık Öğretim dahil) ve
+       üniversite öğrencileri (Lisans, Ön lisans, Yüksek Lisans, Doktora ve Açık Öğretim
+       dahil) ve mezunlar katılabilir.
+   •   Yarışmaya takım halinde katılmak zorunludur. Takımlar en az 3 en fazla 15 kişiden
+       oluşmalıdır. Takımlar bunun haricinde yalnızca 1 kişiyi danışman olarak alabilirler.
+   •   Bir takımın üyesi danışmanlar da dahil olmak üzere başka bir takımın üyesi olarak
+       bulunamaz.
+   •   Takımlar, tek bir okuldan oluşturulabileceği gibi bir veya birden fazla
+       lise/yükseköğretim öğrencisinin bir araya gelmesi ile karma birtakım olarak da
+       oluşturulabilir. Takımın dahil olacağı kategori seviyesi eğitim durumu en ileri olan
+       takım üyesine göre belirlenecektir.
+
+
+
+
+                                               5
+    •   Lise mezunu üyelerin mezuniyet tarihinden itibaren en fazla 3 (üç) yıl geçme şartı
+        aranır.
+    •   Aynı proje ile yalnızca tek bir kategoriye veya tek bir yarışmaya başvurulabilir.
+    •   Aynı proje ile farklı kategori veya TEKNOFEST kapsamında düzenlenen farklı
+        yarışmaya başvuru yapan takımların veya kişilerin başvuruları geçersiz
+        sayılacaktır.
+    •   Robotların tasarımsal ve algoritmik olarak benzerliği incelenecek olup intihal
+        durumunda başvuru ve raporlar geçersiz sayılacaktır.
+    •   Aynı takım üyeleri farklı projeler ile TEKNOFEST kapsamında düzenlenen diğer
+        yarışmalara başvuru yapabilir.
+    •   Finale kalan takımların onaylı öğrenci belgelerini, danışmanlar için ise öğretim
+        üyesi/görevlisi, araştırma görevlisi veya öğretmen olduklarını gösteren onaylı
+        belgeni KYS platformunda açılacak alana yüklemeleri gerekmektedir.
+    •   Yarışmacı, başvuru yapmadan önce yarışma hakkındaki tüm açıklamaları ve
+        katılım koşullarını okuyup onaylamak suretiyle yarışmaya katılabilecektir.
+    •   Başvurular 20 Mayıs 2026 tarihine kadar www.t3kys.com başvuru sistemi
+        üzerinden çevrimiçi olarak yapılır.
+    •   Yarışmaya başvuranlar yukarıda yer alan şartların tamamını kabul etmiş oldukları
+        sayılmaktadır. Başvurular, TEKNOFEST Havacılık, Uzay ve Teknoloji Festivali,
+        Teknoloji Yarışmaları resmî web sitesi (www.teknofest.org) üzerinden alınacaktır.
+2.1. Takım Oluşturma
+
+•   Bu yarışma kapsamında ilkokul-ortaokul seviyesindeki öğrenciler takımlara dahil
+    edilememektedir.
+•   Lisans, lisansüstü öğrencileri ve mezun seviyesindeki takımların danışman alma
+    zorunluluğu bulunmamaktadır.
+•   Lise seviyesindeki takımlar, bir danışman almak zorundadır. Danışman olarak görev
+    yapacak kişinin danışmanlık görevlerini yerine getireceğine dair belgenin
+    (görevlendirme       belgesi)    ıslak    imzalı    olarak     TEKNOFEST        Yarışmalar
+    Koordinatörlüğünün açıklayacağı tarihte sisteme yüklenmesi gerekmektedir.
+•   Danışman, takım üyesi rolüyle eklenmemelidir. Danışmanın takımdaki rolü danışman
+    olarak belirtilmelidir.
+•   Her takımın en fazla bir danışmanı olabilir. Birden fazla danışman bulunan takımların
+    başvuruları geçersiz sayılacaktır.
+•   Takımlar tek bir ülkeden oluşturulabileceği gibi bir veya birden fazla ülkenin
+    öğrencisinin bir araya gelmesiyle karma bir takım oluşturulabilir. Takımın katılabileceği
+    yarışma kategorisi takım üyelerinden eğitim seviyesi en yüksek olana göre
+    belirlenecektir. Bir takımda üyelerin çoğunluğunun bulunduğu ülke, takımın ülke
+    bilgisi olarak belirlenebilir; ancak, takım kendi inisiyatifine bağlı olarak istedikleri bir
+    ülkeyi seçebilir.
+•   Takım içerisinde takım kaptanı bulunmalıdır.
+
+
+
+
+                                               6
+•   Yarışma süreci boyunca, başvuru yaptığınız dönemde, takım oluştururken seçtiğiniz
+    eğitim seviyeniz dikkate alınacaktır. Eğitim seviyesi seçimi yaparken buna dikkat
+    etmeniz gerekmektedir.
+•   Başvuru tarihleri arasında takım kaptanı/danışman (varsa) sistem üzerinden kayıt olur,
+    danışman (varsa) ve/veya takım kaptanı, takım üyelerinin kaydını doğru ve eksiksiz
+    olarak sistemde oluşturur ve üyelerin e-postalarına davet gönderir. Davet gönderilen
+    üye, başvuru sistemine giriş yaparak “Takım bilgilerim” kısmından gelen daveti kabul
+    eder ve kayıt işlemi tamamlanır. Aksi durumda kayıt işlemi tamamlanmış olmaz.
+
+2.2. Danışman Yükümlülükleri
+
+•   Danışman olarak görev yapacak kişinin danışmanlık görevlerini yerine getireceğine
+    dair belgenin ıslak imzalı olarak TEKNOFEST Yarışmalar Komitesinin açıklayacağı
+    tarihte sisteme yüklenmesi gerekmektedir.
+•   Üniversite ve üzeri yarışmacılar final aşamasına danışmanları ile gelmek zorunda
+    değildir. Üniversite ve üzeri seviyesindeki başvurularda takım danışmanı bulunması
+    durumunda danışmanlık belgesi göndermesi zorunludur.
+•   Danışmanın görevi; öğrencilere kendi eğitim-öğretimlerini planlayabilmeleri
+    konusunda yardımcı olmak, akademik, sosyal ve kültürel konularda yol göstermek,
+    zihinsel, sosyal ve duygusal yönleriyle öğrencinin kişiliğinin bir bütün olarak
+    gelişebilmesi için uygun ortamın hazırlanmasına yardımcı olmak vb. görev ve
+    hizmetlerdir. Danışmanının takımdaki rolü projede ihtiyaç duyulacak akademik
+    desteği sağlayarak takım üyelerinin problemlerine çözüm üretebilmeleri için yol
+    göstermektir.
+•   Danışman şartları; Danışman olarak eğitim/öğretim kurumlarında görevli
+    öğretmenler/akademisyenler veya ilgili alanda kariyer hayatını devam ettiren
+    mühendis/uzman vb. kişiler danışman olarak takımda yer alabilir.
+•   Danışmanlar için öğretim üyesi/görevlisi, araştırma görevlisi veya öğretmen
+    olduklarını gösteren onaylı belgenin sunulması gerekmektedir.
+•   Danışmanın ilgili eğitim/öğretim kurumlarından alacağı görevlendirme yazısını
+•   TEKNOFEST Komitesine iletmesi zorunludur.
+•   Danışman değişikliği olması durumunda yazılı olarak ilgili TEKNOFEST Komitesine
+    iletilmesi gerekmektedir. (Danışman değiştirmek için bu belgenin verilmesi
+    zorunludur.)
+•   Danışman final aşamasına kadar takıma destek olacağını ve final aşaması süresince
+    takımın yanında bulunacağını taahhüt eder. Final aşamasına kalan projelerde
+    takımların, danışmanları ile alanda bulunmaları zorunludur.
+
+2.3. Süreç Bilgileri
+•   Yarışma süreci boyunca TEKNOFEST yarışmalar komitesi tarafından yapılacak olan
+    tüm bilgilendirmeler takımın iletişim sorumlusu olarak belirlediği kişiye yapılacaktır.
+    Bu sebeple her takım bir iletişim sorumlusu belirlemelidir. (KYS’ ye kayıtlı e-mail
+    adresine bilgilendirme yapılmaktadır.)
+•   Süreçlerin (Başvuru Yapma, Rapor/Sunum/Form Son Yükleme Tarihi, İtiraz Süreci,
+    Doldurulması Gereken Form vb.) takibi iletişim sorumlusunun görevi olup iletişim
+
+
+
+
+                                             7
+    sorumlusundan kaynaklı gecikmeler ve/veya aksaklıklardan TEKNOFEST yarışmalar
+    komitesi sorumlu değildir.
+•   Yarışma kapsamında gerekli tüm süreçler (Başvuru, Rapor/Sunum/Form Alımı,
+    Rapor/Sunum/Form Sonuçları, Maddi Destek Başvurusu, İtiraz Süreçleri, Üye
+    ekleme/çıkarma işlemleri vb.) KYS sistemi üzerinden yapılmaktadır. Takımların KYS
+    portalı üzerinden süreçleri takip etmesi gerekmektedir.
+•   Yarışma süreci boyunca başvuru yapma, rapor yükleme, itiraz süreci ve form doldurma
+    işlemleri takım kaptanı ve/veya danışmanın yetkisi dahilinde olup yarışma süreçleri bu
+    kişiler üzerinden yönetilmektedir.
+•   Üye ekleme/çıkarma işlemleri TEKNOFEST Yarışmalar Koordinatörlüğünün belirlediği
+    tarihe kadar yapılmaktadır. Belirlenen tarihten sonra takımlar içerisinde değişiklik
+    yapılamayacaktır.
+•   Finale kalan takımlara sağlanacak ulaşım ve konaklama desteği sınırlıdır. Destek
+    verilecek kişi sayısı TEKNOFEST Yarışmalar Koordinatörlüğü tarafından daha sonra
+    takımlara bildirilecektir.
+•   TEKNOFEST Yarışmalar Komitesi festival alanında bulunacak üye sayısını
+    sınırlandırma yetkisine sahiptir. Sınırlandırma yapılması durumunda komite
+    tarafından bilgilendirme yapılacaktır.
+•   Takım oluşturma işlemini tamamlayan yarışmacıların projesine uygun yarışmaya
+    başvuru yapması gerekmektedir.
+•   Başvuru sürecini tamamlayan yarışmacılar, herhangi bir eleme sürecine tabi
+    tutulmaksızın, yarışma takviminde belirtilen Teknik Yeterlilik Formu son yükleme
+    tarihine kadar formlarını eksiksiz bir şekilde hazırlayarak sisteme yüklemekle
+    sorumludur. Formu belirtilen süre içerisinde sistemde tamamlamayan takımlar bu
+    aşamada elenmiş sayılacaktır.
+
+2.4. Başvuru Esasları
+Başvurular, TEKNOFEST Havacılık, Uzay ve Teknoloji Festivali Teknoloji Yarışmaları resmî
+web sitesi (www.teknofest.org) üzerinden alınacaktır.
+Başvurular 20 Mayıs 2026 tarihine kadar www.t3kys.com başvuru sistemi üzerinden
+çevrim içi olarak yapılır.
+
+Yarışmacı, başvuru yapmadan önce yarışma hakkındaki tüm açıklamaları ve katılım
+koşullarını okuyup onaylamak suretiyle yarışmaya katılabilecektir.
+
+Yarışmaya başvuranlar şartnamede yer alan şartların tamamını kabul etmiş oldukları
+sayılmaktadır.
+
+3. YARIŞMA KATEGORİSİ
+3.1. Yarışma Kategorisi
+       Yarışma tek kategoriden oluşmaktadır. Yarışmanın konusu, bir fabrika depolama
+       alanında bulunan palet üzerindeki malzemelerin fabrika içerisinde imalat hattında
+
+
+
+
+                                            8
+         kullanılacak hat kenarına otonom olarak taşınmasını sağlayacak bir forklift
+         otonom mobil robot tasarlanması ve talep edilen görevleri yerine getirmesidir.
+         Taşıma, tanımlanmış rotalar takip edilerek yapılacaktır.      Bu işin yerine
+         getirilebilmesi için, takımlardan aşağıdaki fonksiyonların yapılması talep
+         edilecektir.
+
+3.1.1.      Görevler
+         1. Haritalama: Forklift otonom mobil robot üzerindeki 2D lazer alan tarayıcıyla
+            haritalama yapabilmelidir.
+         2. Rota tanımlama: Forklift otonom mobil robot arayüzü üzerinden rota
+            tanımlamaları yapılabilmelidir.
+         3. Fabrika üretim sistemi ile haberleşme: Forklift otonom mobil robota görev
+            (alma ve bırakma noktaları), fabrika üretim sisteminden iletilecektir. İletişim
+            yöntemi ve protokolü ayrıca iletilecektir.)
+         4. Görüntü işleme ile çizgi takibi: Forklift otonom mobil robotun hassas olarak
+            konumlanması gereken yerlerin (yük alma ve yük alma) 1,5 metre öncesindeki
+            renkli şeritleri görüntü işleme yöntemleri ile algılayıp takip edebilmelidir.
+            Otonom forklift mobil robotlar hibrit navigasyon sistemine sahip olmalıdır.
+         5. QR kod okuma ve qr kod konum hesaplama: Forklift otonom mobil robot qr kod
+            okuyabilmelidir ve qr kodun kameraya göre pozisyonunu hesaplayabilmelidir.
+         6. Rota üzerinde bir engelle karşılaşması durumunda, forklift otonom robot
+            güvenli bir mesafede durabilmeli ve engele çarpmamalıdır. Engelden kaçınarak
+            görevi tamamlaması beklenmemektedir. Engel ortadan kaldırıldığında görevine
+            devam etmelidir.
+         7. Forklift otonom mobil robot rota üzerinde hareket ederken rotadan en fazla
+            10cm sapabilir. Daha fazla sapma durumunda puan tablosunda tanımlı ceza
+            puanı uygulanacaktır.
+         8. Forklift otonom mobil robot tanımlı bekleme, alma, bırakma alanlarına aşağıda
+            belirtilen konum ve yön toleranslarıyla gelebilmelidir. Tanımlı toleransların
+            dışına çıkılması durumunda            puan tablosunda tanımlı ceza puanı
+            uygulanacaktır.
+                a) Konum toleransı düzlemde +/- 7.5 cm
+                b) Yön toleransı +/- 5 derece
+         9. Rota üzerinde fabrika otomasyon sistemi tarafından kontrol edilen bir kapı
+            olacaktır. Forklift otonom mobil robot kapı geçiş noktasında geldiğinde, fabrika
+            otomasyon sistemine bilgi verecektir. Fabrika otomasyon sistemi uygun
+            zamanda kapıyı açıp, forklift otonom mobil robota “geçebilirsin” izni/bilgisini
+            verecektir. Bu izin alındıktan sonra forklift otonom mobil robot görevine devam
+            edecektir. Fabrika otomasyon sistemi ile haberleşme protokolü ön aşamaları
+            geçen takımlarına ayrıca iletilecektir.
+
+
+
+
+                                              9
+    10. Forklift otonom mobil robot bir bilgisayar üzerinden takip edilebilecek şekilde
+        bir kullanıcı arayüzüne sahip olmalıdır. Kullanıcı arayüzünde, forklift otonom
+        mobil robotun durum bilgisi, görev durum bilgisi, okunan qr kod bilgisi, fabrika
+        otomasyon sistemi haberleşme durumu ve alınıp verilen mesajlar
+        görülebilmelidir. Forklift otonom mobil robotun durumu aşağıdakileri
+        kapsamalıdır:
+            a) Göreve hazır bekleme durumu (idle)
+            b) Görev alındı işleniyor durumu
+            c) Görev alındı yüksüz hareket durumu
+            d) Görev alındı yüklü hareket durumu
+            e) Fabrika otomasyon sistemi komut bekleniyor durumu
+            f) Görev tamamlandı, başlangıç noktasına hareket durumu
+            g) Hata durumu (forklift otonom mobil robotta hata var)
+            h) Acil stop durumu
+        Bu arayüz ayrıca uzaktan kontrole uygun yapıda olmalıdır. Gerektiğinde forklift
+        otonom mobil robot uzaktan manuel kontrol edilebilmelidir. Uzaktan manuel
+        kontrole geçiş, forklift otonom mobil robot üzerinde bulunan anahtar ile kontrol
+        edilebilmelidir. Anahtar otomatik modda iken uzaktan kontrol yapılamamalıdır.
+        Uzaktan kontrolü aktif hale getirmek için, forklift otonom mobil robot
+        üzerindeki anahtar “manuel” konuma getirilmelidir.
+
+
+
+4. YARIŞMA ALANI VE YARIŞMA SENARYOSU
+
+
+
+
+                           Şekil 1: Yarışma alanı şematik gösterimi
+
+
+
+
+                                             10
+Yarışma Senaryosu:
+Forklift otonom mobil robot Şekil-1’de belirtilen başlangıç alanından başlayarak
+haritalama yapacaktır. Haritalama tamamlandıktan sonra Şekil-1’de tanımlanan rotalar,
+alma/bırakma noktaları, qr kod noktaları, düğüm noktaları, fabrika içi kontrollü kapı
+bölgesi; ister forklift otonom mobil robot manuel olarak gezdirilerek istenirse bir kullanıcı
+arayüzü vasıtasıyla tanımlanacaktır. Haritalama, rota ve diğer noktaların tanımlanması
+için takımlara, yarışma öncesi (bir veya iki gün öncesi) 60 dakika süre tanınacaktır.
+Haritalama ve rotalama işlemlerini tamamlayamayan takımlar bir sonraki yarışma
+adımına geçemeyecektir.
+Yarışma alanında, fabrika otomasyon sistemini temsilen endüstriyel bir PLC sistemi
+olacaktır. Endüstriyel PLC Şekil-1 de tanımlanan kapının açılmasını ve kapanmasını
+kontrol edecektir. Endüstriyel PLC yarışmada ilgili görevlinin kontrolünde olacaktır.
+Haritalama ve rotalama işlemlerini tamamlayan takımlar, yarışmanın ikinci aşamasına
+geçmeye hak kazanacaklardır. Yarışmanın ikinci aşamasında aşağıdaki senaryo adımları
+uygulanacaktır.
+   1- Forklift otonom mobil robot başlangıç alanında çalışmaya hazır vaziyette, saha wifi
+      ağına bağlı halde bekleyecektir.
+   2- Forklift otonom mobil robot, saha wifi ağı üzerinden endüstriyel PLC sistemine
+      bağlanacaktır.
+   3- İletişim kanallarının uygun bir şekilde kurulduğu endüstriyel PLC sistemi
+      tarafından teyit edildikten sonra, PLC sisteminde rastgele numara üretim
+      yöntemiyle, 3 adet alma noktasından bir tanesi ve 3 adet bırakma noktasından bir
+      tanesi tanımlanacaktır.
+   4- Rastgele tanımlanan bu noktalar endüstriyel PLC sistemi iletişim protokolü ile
+      forklift otonom mobil robota saha wifi ağı vasıtasıyla iletilecektir.
+   5- Alma ve bırakma noktalarını alan forklift otonom mobil robot, uygun rotaları takip
+      ederek önce yük alma noktasına gidecektir. Yük alma ve bırakma noktalarının
+      yaklaşık 1.5 metre öncesinde hangi yük alma noktasının olduğunun tanımlandığı
+      bir qr kod yere monte edilecektir. Qr kod’dan başlamak üzere yükün uygun bir
+      şekilde alınabilmesini sağlayacak şekilde yere yerleştirilecek bir çizgi ile (ister çizgi
+      takibi iste doğal navigasyon yöntemleri ile) yük alınabilecektir.
+   6- Forklift otonom mobil robot yükü aldıktan sonra taşıma, yük hareket yönün tersi
+      tarafta olacak şekilde devam etmelidir.
+   7- Yükün taşınması tanımlı rotalar üzerinden en uygun olandan devam etmelidir. Rota
+      optimizasyonu takımlar tarafından forklift otonom mobil robota hesaplatılacaktır.
+   8- Forklift otonom mobil robot yük ile q5 qr kod noktasına geldiğinde durmalıdır.
+      Durma fonksiyonu, ister q5 qr kod’u okunduğunda ister doğal navigasyon sonucu
+      hesaplanan koordinatlara göre yapılabilir. Forklift otonom mobil robot durduktan
+      sonra fabrika otomasyon sistemine kapı kontrol noktasına geldiğini bildirmelidir.
+
+
+
+
+                                             11
+       Bu iletişim sonrasında, fabrika otomasyon sistemi geçişin uygun olduğu bilgisine
+       göre kapıyı açacaktır ve kapının açık olduğunu ve geçişin müsait olduğunu forklift
+       otonom mobil robota bildirecektir.
+   9- Bu bilgi iletişiminden sonra forklift otonom mobil robot görevine devam edecektir.
+       Forklift otonom mobil robot, fabrika otomasyon sisteminden gönderilen bırakma
+       noktasına vardığında yükü tanımlanan bölgeye bırakacaktır. Yükü bıraktığını
+       fabrika otomasyon sistemine bildirecektir.
+   10- Forklift otonom mobil robot yükü teslim noktasına bıraktıktan sonra, bekleme
+       noktasına hareket edecektir. Dönüş görevi sırasında tekrar kapı kontrol
+       noktasından geçerken, fabrika otomasyon sistemi ile haberleşecektir. Adım-8’deki
+       iletişim protokolüyle görevine devam edecektir.
+   11- Forklift otonom mobil robot bekleme noktasına vardığında, bekleme noktasında
+       olduğunu fabrika otomasyon sistemine bildirecektir.
+   12- Takımlara bu görevleri gerçekleştirebilmek için 30 dakika zaman tanınacaktır.
+       Görevi erken bitiren takımlar, erken bitirdikleri kalan süre kadar (dakika) artı puan
+       kazanacaklardır. Görevlerin bitirilmesi için zaman üst limiti ise 45 dakikadır. 30
+       dakikayı geçen her dakika için takımlara ceza puanı yazılacaktır.
+
+
+
+WİFİ AĞA BAĞLANTI TANIMI : Yarışma alanında iki adet lokal wifi ağı kurulu olacaktır. Bu
+iki ağın internet bağlantısı olmayacaktır.
+Birinci ağ yarışma deneme alanı için tanımlı olup ağ “YARISMA DENEME AGI” olacaktır.
+Takımlar, deneme yapmak istediklerinde bu ağa bağlanacaktır. Deneme yapmak isteyen
+takım önceden ilgili görevlilere haber verecektir. Deneme sırası rezervasyon usulüne göre
+ayarlanacaktır. Takımların deneme rezervasyonları 30 dakika ile sınırlıdır. Deneme
+yapmak isteyen takım için, wifi ağına biri forklift otonom mobil robot diğeri takip ve görev
+bilgisayarı olmak üzere iki cihaz için bağlanma izni verilecektir. Takımlar ağa bağlantısı
+gerçekleştireceği forklift otonom mobil robotun ve bilgisayarın MAC adreslerini ilgili
+görevlilere bildirecektir. Wifi ağ bağlantısı izni MAC adres filtreleme yoluyla kontrol
+edilecektir. Deneme sırasında herhangi bir başka cihazın ağa bağlanmasına izin
+verilmeyecektir.
+İkinci ağ ise yarışma alanı için tanımlı olan wifi ağıdır. Wifi ağını adı “YARISMA AGI”
+olacaktır. Yarışmaya katılacak takımlar için iki cihazın ağa bağlantısına izin verilecektir. Bu
+cihazlardan ilki forklift otonom mobil robotu, diğeri ise uzaktan monitör bilgisayarı
+olacaktır. Takımlar yarışma organizasyonu başlamadan iki gün önce ilgili cihazların MAC
+adreslerini ilgili görevlilerle paylaşmalıdır.
+Ağa hangi cihazın ne zaman bağlanacağını ilgili yarışma görevlileri kontrol edecektir.
+
+
+
+Palet ve yük tanımı:
+
+
+
+
+                                              12
+Palet üzerindeki yük sembolik bir yük olup maksimum 5 kg olacaktır. Palet ve yük ölçüleri
+Şekil-2’de tanımlanmıştır.
+
+
+
+
+                                  Şekil 2: Yük ve palet ölçüleri
+
+
+
+
+Forklift Otonom Mobil Robot Ölçü Sınırları:
+Forklift otonom mobil robot maksimum ölçüleri Şekil-3’de tanımlanmıştır.
+
+
+
+
+                                               13
+                           Şekil 3: Otonom forklift mobil robot maksimum ölçüleri
+
+Yarışma Alanı Detayları:
+
+
+
+
+                                   Şekil 4: Yarışma alanı üstten görünüş
+
+
+
+
+                                                    14
+                             Şekil 5: Yarışma alanı perspektif görünüş
+
+
+5. YARIŞMA DETAYLARI
+5.1. Kurallar
+
+Yarışma parkurunda en fazla 2 takım üyesi bulunabilecektir. Her seviyede her aşamanın
+tamamlanması hakemler tarafından yeşil bayrak kaldırılarak bildirilecek hata durumunda
+ise hakemler tarafından kırmızı bayrak kaldırılarak bildirilecektir. Her seviyede kontrol
+masasında sadece yarışmacılar bulunabilecek olup danışmanların bu masada ve
+parkurda bulunması yasaktır. Ayrıca kontrol paneline izleme dışında hiçbir şekilde
+müdahalede bulunulmayacaktır. Müdahale olması durumunda puan tablosunda
+belirtilen ilgili ceza puanı uygulanacaktır. Danışman dışındaki tüm takım üyeleri kontrol
+masasında bulunabilecektir.
+
+Yarışmacı takım yarışma parkuruna çağrıldıktan sonra hakem heyeti tarafından
+belirlenecek makul hazırlanma süresine sahip olacaktır. Bu süre içerisinde takımın
+yarışacağı senaryo belirlenecek ve takımlar hazır olduğu zaman işaret verilerek yarışmaya
+başlanacaktır.
+
+6. YARIŞMA TAKVİMİ, PUANLAMA, DEĞERLENDİRME
+6.1. Yarışma Takvimi
+Yarışma aşağıda belirtilen yarışma takvimine göre gerçekleştirilecektir.
+
+
+
+
+                                               15
+Tablo 2 Yarışma Takvimi
+
+              Tarih                                       Açıklama
+
+          20.05.2026                              Yarışma Son Başvuru Tarihi
+
+      02.06.2026-17:00
+                                           Teknik Yeterlilik Formu Son Teslim Tarihi
+
+          05.06.2026
+                                       Teknik Yeterlilik Formu Sonucu Açıklanma Tarihi
+
+      01.07.2026-17:00
+                                            Proje Detay Raporu Son Teslim Tarihi
+
+          10.07.2026                    Proje Detay Raporu Sonucu Açıklanma Tarihi
+
+      11.08.2026-17:00
+                                       Hareket ve Kabiliyet Videosu Son Teslim Tarihi
+
+          18.08.2026          Hareket ve Kabiliyet Videosu Sonucu (Finalist) Açıklanma Tarihi
+
+        Ağustos-Eylül                                  Yarışma Finalleri
+
+   30 Eylül- 4 Ekim 2026                            TEKNOFEST Şanlıurfa
+
+
+
+Değerlendirme; Teknik Yeterlilik Formu, Proje Detay Raporu, Hareket – Kabiliyet Videosu
+ve yarışma puanlaması başlıklarında yapılacaktır. Yarışma kapsamında toplam bir adet
+form, bir adet rapor ve bir adet video hazırlanacaktır. Teknik Yeterlilik Formu, Proje Detay
+Raporu ve Videoyu göndermeyen takımlar finale katılmaya hak kazanamayacaktır. Video
+için erişim izni “herkese açık” şeklinde olmalıdır.
+Raporun takvimde belirtilen gün ve saat içerisinde KYS sistemi üzerinden yüklenmesi
+gerekmektedir. İtiraz süreci TEKNOFEST Yarışmalar Koordinatörlüğü tarafından
+sonuçların açıklanmasının ardından gönderilen mail ile takımlara bildirilmektedir. Takvim
+ve saatlerde TEKNOFEST Yarışmalar Koordinatörlüğü tarafından değişiklik yapma hakkı
+bulunmaktadır.
+
+6.1.1.       Teknik Yeterlilik Formu
+Teknik Yeterlilik Formu fazında ön sistem tasarımları yapılır. Teknik Yeterlilik Formu’nda,
+problemin detaylı tanımı, buna ilişkin sektörel veriler, bu problemin nasıl çözüleceği,
+tasarlanan ön sistemlerin maliyet (program bütçesi), çalışma planı (program çizelgesi),
+risk ve diğer sistem kısıtlamaları dâhilinde belirtilen performans isterlerini
+karşılayabilecek; nihai ayrıntılı tasarıma karar vermek için oluşturulan "disiplinler arası"
+bir gözden geçirme formudur. Bu formun sonunda ön tasarıma karar verilir. Proje Detay
+Raporu (PDR) fazına geçildiğinde ise belirlenen tasarımın detayları yapılır.
+
+
+
+
+                                             16
+Takımlar, Teknik Yeterlilik Formlarını Yarışma Takviminde belirtilen tarihte teslim etmekle
+yükümlüdürler. Teknik Yeterlilik Formlarının teslimi ile alakalı detaylı bilgilendirme
+yarışma başvuru tarihinin sona ermesinin ardından başvurusunu tamamlamış olan
+takımlar ile paylaşılacaktır. Teknik Yeterlilik Formu sonuçlarına göre bir ön eleme
+gerçekleştirilecektir. Teknik Yeterlilik Formu şablonu ilerleyen süreçte web sitesi
+(https://www.teknofest.org/) üzerinden paylaşılacaktır. Ön değerlendirmeler sonucunda
+ikinci aşamaya geçen takımlar Yarışma Takviminde belirtilen tarihte açıklanacaktır.
+TYF şablonu daha         sonra   www.teknofest.org     sitesinde    yarışma    sayfasından
+paylaşılacaktır.
+
+6.1.2.    Proje Detay Raporu
+Proje Detay Raporu (PDR) aşamasına geçen takımlar, Proje Detay Raporlarını Yarışma
+Takviminde belirtilen tarihte teslim etmekle yükümlüdürler. Proje Detay Raporu; Analiz,
+Tasarım, Geliştirme, Test ve Uygulama (entegrasyon ve canlıya geçiş aktivitelerini) içeren
+Proje Geliştirme süreçlerinin daha detaylı anlatıldığı ayrıca Proje Bütçesi, Proje Planın
+(proje takvimi) ve Proje Kapsamını detaylandırıldığı bir rapor olmalıdır. Proje Detay
+Raporuna ait şablonlar TEKNOFEST web sitesi üzerinden açıklanacaktır. PDR sonuçlarına
+göre finale kalmaya hak kazanan Yarışma Takviminde belirtilen tarihte açıklanacaktır.
+Proje Detay rapor sonuçlarına göre başarılı olan takımlar maddi destek başvurusu yaptı
+ise almaya hak kazanacaktır, bu aşamada KYS sistemi üzerinden iletilecek olan maddi
+destek formunun doldurulması gerekmektedir, Maddi destek formu için tarih, TEKNOFEST
+Yarışmalar Koordinatörlüğü tarafından belirlenecek olup bilgilendirme iletişim
+sorumlusuna yapılacaktır. Maddi destek başvurusu yapmak zorunlu değildir.
+PDR şablonu daha         sonra   www.teknofest.org      sitesinde   yarışma    sayfasından
+paylaşılacaktır.
+
+6.1.3.    Hareket-Kabiliyet Videosu
+Hareket – kabiliyet videosunun hazırlandığı aşamadır. Takımlar tasarımlarını
+tamamlayacak ve aracının düz zemin üzerinde bir noktadan başka bir noktaya istemli ve
+dengeli bir şekilde hareket edebildiğinin ve yükü alıp doğru alana bırakabildiğinin
+gösterilmesi gerekmektedir. Kabul edilmeyecek hareketlere örnek olarak aşağıdaki
+maddeler verilebilir.
+
+   1. Düz zemin üzerinde yer alan engellere çarpan, hareket eksenlerinde istemsiz ve
+      hareket yönünden bağımsız dönüş/sürüş gerçekleştiren
+   2. Otonom araçlar için dışarıdan kontrol (otonom yazılım harici)
+   3. Aracın görüntüsünün ve hareketinin net olmadığı videolar
+   4. Video mp4 formatında olmalı ve 50 Mb büyüklüğü geçmemelidir. Robotun
+      bilgisayardan verilen bir komut ile hareket ettiği, çizgi takibi yaptığı, engel
+      gördüğünde durduğu, senaryo icabı sağa ve sola dönebildiği gösterilmeli, ayrıca
+      ileri seviye için haritalandırma yapabildiğini gösteren bir video ve GUI tasarımlarını
+
+
+
+
+                                            17
+         gösteren kısımlar bulunmalıdır. Video ortam seslerinin de duyulabileceği şekilde
+         kaydedilmelidir.
+
+Dikkat Edilecek Genel Hususlar
+
+    1. Araçlarda bulunacak acil durdurma butonunun çalıştığının gösterilmesi
+       beklenmektedir. Butona basıldığında (Manyetik ya da döndürmeli acil durum
+       butonları da kabul edilmektedir.) bütün motorların durup sistemin kapandığı
+       gösterilmelidir.
+    2. Videonun çözünürlüğü en az 720p, toplam süresi ise en az 2-3 dakika, en fazla 5
+       dakika olmalıdır.
+    3. Yarışmaya katılabilmek için hareket kabiliyeti videosunun Yarışma Takviminde
+       belirtilen tarihe kadar gönderilmesi zorunludur.
+    4. Videolar Youtube’a yüklenecektir. Diğer platformlara yüklenen videolar kabul
+       edilmeyecektir.
+
+6.2. Yarışmanın Puanlaması
+Yarışma puanlaması rapor ve video sunumu puanlamalarından oluşmaktadır. Rapor
+puanlaması ve video toplam puanın %30’unu oluşturacaktır. Toplam puanın %70’i
+yarışma esnasında verilecek görevlerden elde edilecektir.
+
+6.2.1.       Form, Rapor ve Video Puanlaması (%30)
+Aşağıdaki tabloda rapor ve video puanlama türleri ve yüzdeleri belirtilmiştir.
+Tablo 3 Puan Dağılımı
+
+
+               Puanlama Türü                               Puanlama Yüzdesi
+                           Proje Detay Raporu                      %15
+                        Hareket – Kabiliyet Videosu                %15
+               Prototip ve Sunum (Yarışma) Puanlaması              %70
+
+
+
+6.2.2.        Prototip ve Sunum Puanlaması
+Finale kalan takımların projeleri, ilgili kategori alanlarında uzman jüri ekipleri tarafından
+değerlendirileceklerdir. Jüri değerlendirmesi için görsel sunum hazırlanması
+gerekmektedir. Finale katılım için PDR sonrası video gönderimi beklenmektedir. Yarışma
+ortamı gereksinimleri, yarışmacıların jüriye prototiplerini göstermeleri ve görsel
+sunumlara dair ayrıntılı bilgiler finalist takımlarının belirlenmesinin ardından finalist
+takımlarla paylaşılacaktır.
+Final sunumları takım üyeleri tarafından yapılmalıdır, danışmanların sunum yapması
+kural dışıdır. Final değerlendirmelerine göre finalist takımların sonuç sıralaması
+TEKNOFEST Yarışma Takviminin ardından https://www.teknofest.org sitesinden
+duyurulacaktır.
+
+
+
+
+                                                  18
+Tablo 4 Final Değerlendirme Kriterleri Puan Dağılımı
+
+ PUANLAMA TABLOSU
+ Sunum                                                                           +10
+ Haritalama                                                                      +30
+ Rota hazırlama                                                                  +20
+ Fabrika otomasyon sistemi ile haberleşme                                        +20
+ Görüntü işleme ile çizgi takibi                                                 +10
+ QR kod okuma                                                                    +10
+ Çarpışma engelleme                                                              +10
+ Rota dışına sapma                                                               -5
+ Bölge toleranslarının dışına çıkma                                              -5
+ Fabrika otomasyon sistemi ile haberleşip kontrollü kapıdan sorunsuz             +20
+ geçiş
+ Kullanıcı arayüzünün olması ve tanımlı tüm bilgilerin gösterilebilmesi          +20
+ Kullanıcı arayüzünde gösterilemeyen her bir bilgi için ceza puanı               -4
+ Tanımlı görevi tamamlama                                                        +30
+ Görevi erken tamamlama durumu (kalan her dakika için)                           +1
+ Görevi geç tamamlama durumu (geçen her dakika için)                             -1
+ Yerlilik                                                                        +5
+ Özgünlük                                                                        +5
+ Otomatik Şarj Kabiliyeti;                                                       +5
+
+6.2.3.        Ceza Puanları
+Final değerlendirme kriterleri puan dağılımı Tablo 4’te yer alan ceza puanları her biri en
+fazla iki kez uygulanacaktır. Örneğin; takımlar tüm parkur görevlerinin yerine getirilmesi
+süresince yükü en fazla iki kez yere düşürebilmektedir, ikiden fazla düşürmesi durumunda
+parkur görevi başarısız sayılacak ve puanlama yapılmayacaktır.
+
+6.2.4.        Ekstra Puanlar
+Final değerlendirme kriterleri puan dağılımı Tablo 4’te yer alan ekstra puan kriterleri
+değerlendirilmesi şu şekilde olacaktır.
+Yerlilik kriteri için üretilen robotun bir kısmının yerli imkânlarla gerçekleştirilmesi
+beklenir.
+Örneğin: Bir donanım, yazılım ya da yardımcı ekipmanların yerli imkânlarla geliştirilmesi
+yerlilik göstergesidir.
+
+    •    Yerli bir donanım
+    •    Yerli bir yazılım
+    •    Yerli (ve etkin) bir tasarım
+    •    Yerli üretim
+Özgünlük kriteri için çözüm fikri veya yönteminin mevcut çözümlerden farklı, problem
+durumuna uygun ve pazarda uygulanabilir olması beklenir.
+
+
+
+
+                                                       19
+Otomatik Şarj Kabiliyeti; Robotların şarj seviyesinin belli bir seviyenin (ör. %20) altına
+düşmesi durumunda otomatik olarak robotun şarj istasyonuna gitmesi ve kendini şarj
+etmesi beklenmektedir. Bu görevi yerine getiren takımlar ilave puan alacaklardır. Örneğin
+robotun şarj seviyesinin %20’nin altına düşmesi durumunda robot mevcut görevini en kısa
+zamanda tamamlayarak (robot yük taşıyorsa yükü bırakması gereken noktaya bıraktıktan
+sonra, yük taşımıyorsa doğrudan şarj istasyonuna yönelmesi beklenmektedir) şarj
+istasyonuna gitmesi ve kendini şarj etmesi beklenecektir. Yarışma alanına şarj istasyonu
+kurulumu gerçekleştirilecektir. Şarj istasyonu hakkındaki teknik detaylar ilerleyen süreçte
+web sitesi (https://www.teknofest.org/) üzerinden paylaşılacaktır.
+Kalan süre kriteri, tüm görevleri başarıyla tamamlayan takımların kalan sürelerinin x0.1
+katsayısıyla çarpılarak final puanına eklenmesi şekildedir.
+
+7.     ÖDÜLLER
+Yarışmada üç aşamada ayrı ayrı değerlendirme neticesinde ön elemeyi geçerek kendi
+kategorisinde, final değerlendirmesinde dereceye giren takımlara para ödülü verilecektir.
+Aşağıdaki tabloda belirtilen ödüller, ödül almaya hak kazanan takımlara verilecek toplam
+tutarı göstermektedir, bireysel ödüllendirme yapılmayacaktır. Birincilik, ikincilik ve
+üçüncülük ödülleri, takım üyeleri (Sistemde kayıtlı tüm üyelere) toplam sayısına göre eşit
+miktarda bölünerek her şahsın belirteceği banka hesabına yatırılacaktır.
+Ödül için minimum koşulları sağlamayan ancak aşağıda belirtilen ödül kriterlerine göre
+mansiyon almaya hak kazanan takımlara Danışma kurulunun uygun göreceği oranda
+mansiyon ödülü verilecektir.
+Ödül Sıralaması İçin Minimum Başarı Kriteri:
+Yarışmada ödül sıralamasına girmeye hak kazanmak için takımların ön elemeyi başarıyla
+geçmeleri gerekmektedir. Sadece ödül sıralamasına girebilen takımlardan derece elde
+edebilenler Tablo 5’te yer alan ödülleri almaya hak kazanabileceklerdir.
+Tablo 5 Ödüller Tablosu
+
+     DERECELER            BİRİNCİLİK          İKİNCİLİK            ÜÇÜNCÜLÜK
+ Ödül Miktarı             ₺250.000,00        ₺200.000,00           ₺150.000,00
+ Danışman                 ₺20.000,00         ₺15.000,00             ₺12.000,00
+
+Para ödüllerine ek olarak aşağıda açıklanan şartlar doğrultusunda takımlara “En Özgün
+Tasarım Ödülü”, “En İyi Sunum Ödülü” verilecektir. Belirtilen ödüllerin prestij amaçlı olup
+maddi karşılığı bulunmamaktadır.
+En Özgün Tasarım Ödülü:
+Rapor aşamaları ile birlikte Yarışma Değerlendirme Kurulu tasarım değerlendirmelerini
+yapmaktadır. Yarışma Değerlendirme Kurulu yarışma kapsamına ve robotik sistemin ve
+tüm alt sistemlerine göre tasarım koşullarına uygunluk, özgünlük ve değerlendirme
+
+
+
+
+                                            20
+ölçütlerini gözeterek oylama yöntemiyle en iyi tasarıma sahip takımlar belirleyeceklerdir.
+Kriterlerin sağlanmaması durumunda ödül verilmeyebilir.
+En İyi Sunum Ödülü:
+Her kategoride finale kalan Takımların yapmış oldukları sunumlar, prototipler Danışma ve
+Değerlendirme Kurulu tarafından ayrıca sunum teknikleri, yapılan sunum ve elde edilen
+sonuç karşılaştırması yapılarak dereceye girip girilmediğinden bağımsız olarak
+değerlendirilerek Takım adına her kategori için En İyi Sunum Ödülü adı altında ödül
+sunulacaktır. Kriterlerin sağlanmaması durumunda ödül verilmeyebilir.
+
+8.   İLETİŞİM
+Yarışma hakkında sorular için TEKNOFEST web sitesinde Sanayide Robotik Uygulamalar
+Yarışması sayfasından yarışmanın grubuna katılabilirsiniz. Bu grubun aktif olarak takip
+edilmesi ve her takımdan en az 1 kişinin üye olarak bu gruptaki duyuruları, soru ve
+cevapları takip etmesi yarışmacıların sorumluluğundadır. Belirtilen e-posta grubunun
+takip edilmemesi sonucunda doğacak takımların güncel bilgilendirmelere ulaşamama
+durumundan TEKNOFEST Yarışmalar Komitesi sorumlu değildir.
+Yarışmanın organizasyonel bölümleri ile ilgili soruların iletisim@teknofest.org e-posta
+adresi üzerinden iletilmesi gereklidir.
+Sorularınızın yukarıda doğru kanallar üzerinden iletilmesi, sorulan sorulara hızlı dönüş
+yapılabilmesi açısından önem arz etmektedir.
+
+9.   GENEL KURALLAR
+Yarışma kapsamında geçerli olan Genel Kurallar kitapçığına ulaşmak için tıklayınız.
+
+10. ETİK KURALLAR
+Yarışma kapsamında geçerli olan Etik Kurallar kitapçığına ulaşmak için tıklayınız.
+
+Sorumluluk Beyanı
+T3 Vakfı ve TEKNOFEST, yarışmacıların teslim etmiş olduğu herhangi bir üründen veya
+yarışmacıdan kaynaklanan herhangi bir yaralanma veya hasardan hiçbir şekilde sorumlu
+değildir. Yarışmacıların 3. kişilere verdiği zararlardan T3 Vakfı ve organizasyon yetkilileri
+sorumlu değildir. T3 Vakfı ve TEKNOFEST, takımların kendi sistemlerini Türkiye
+Cumhuriyeti yasaları çerçevesinde hazırlamalarını ve uygulamalarını sağlamaktan
+sorumlu değildir.
+Türkiye Teknoloji Takımı Vakfı işbu şartnamede her türlü değişiklik yapma hakkını
+saklı tutar.
+
+
+
+
+                                             21
+22
+
