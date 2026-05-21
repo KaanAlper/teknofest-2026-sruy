@@ -10,9 +10,8 @@ from launch import LaunchDescription
 from launch.actions import (
     ExecuteProcess,
     IncludeLaunchDescription,
-    RegisterEventHandler,
+    TimerAction,
 )
-from launch.event_handlers import OnProcessStart
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch.substitutions import Command, FindExecutable
 from launch_ros.actions import Node
@@ -25,10 +24,10 @@ def generate_launch_description():
     world_path = "/workspace/sim/worlds/teknofest_saha.world"
     xacro_path = "/workspace/hardware/urdf/cargobot.urdf.xacro"
 
-    # 1) Gazebo
+    # 1) Gazebo — server-only (headless). GUI istersen ayrı gzclient ile bağlan.
     gazebo = ExecuteProcess(
         cmd=[
-            "gazebo", "--verbose",
+            "gzserver", "--verbose",
             "-s", "libgazebo_ros_init.so",
             "-s", "libgazebo_ros_factory.so",
             world_path,
@@ -59,9 +58,8 @@ def generate_launch_description():
         ],
         output="screen",
     )
-    spawn_after_gazebo = RegisterEventHandler(
-        OnProcessStart(target_action=gazebo, on_start=[spawn])
-    )
+    # Gazebo spawn_entity service'i kaydetmesi için ~6 sn yeterli
+    spawn_after_gazebo = TimerAction(period=6.0, actions=[spawn])
 
     # 4) slam_toolbox (online async)
     slam = Node(
