@@ -1,0 +1,91 @@
+<?xml version="1.0" ?>
+<!--
+  TEKNOFEST SRUY saha replikası (yaklaşık).
+  - 12 x 8 m alan
+  - 3 alma noktası (P1, P2, P3) + 3 bırakma (D1, D2, D3)
+  - Bir kapı modeli (Q5) — başlangıçta açık, runtime'da PLC ile kapanıp açılır
+  - Palet ve QR kağıtları
+  Modeller basit kutu/silindir; ileride mesh ile zenginleştirilebilir.
+-->
+<sdf version="1.7">
+  <world name="teknofest_saha">
+
+    <include><uri>model://sun</uri></include>
+    <include><uri>model://ground_plane</uri></include>
+
+    <gravity>0 0 -9.81</gravity>
+    <physics type="ode"><max_step_size>0.005</max_step_size><real_time_factor>1.0</real_time_factor></physics>
+
+    <!-- Çevre duvarları -->
+    <model name="wall_north"><static>true</static><pose>0 4 0.5 0 0 0</pose>
+      <link name="l"><collision name="c"><geometry><box><size>12 0.1 1.0</size></box></geometry></collision>
+      <visual name="v"><geometry><box><size>12 0.1 1.0</size></box></geometry>
+      <material><ambient>0.7 0.7 0.7 1</ambient></material></visual></link></model>
+    <model name="wall_south"><static>true</static><pose>0 -4 0.5 0 0 0</pose>
+      <link name="l"><collision name="c"><geometry><box><size>12 0.1 1.0</size></box></geometry></collision>
+      <visual name="v"><geometry><box><size>12 0.1 1.0</size></box></geometry>
+      <material><ambient>0.7 0.7 0.7 1</ambient></material></visual></link></model>
+    <model name="wall_east"><static>true</static><pose>6 0 0.5 0 0 0</pose>
+      <link name="l"><collision name="c"><geometry><box><size>0.1 8 1.0</size></box></geometry></collision>
+      <visual name="v"><geometry><box><size>0.1 8 1.0</size></box></geometry>
+      <material><ambient>0.7 0.7 0.7 1</ambient></material></visual></link></model>
+    <model name="wall_west"><static>true</static><pose>-6 0 0.5 0 0 0</pose>
+      <link name="l"><collision name="c"><geometry><box><size>0.1 8 1.0</size></box></geometry></collision>
+      <visual name="v"><geometry><box><size>0.1 8 1.0</size></box></geometry>
+      <material><ambient>0.7 0.7 0.7 1</ambient></material></visual></link></model>
+
+    <!-- Bekleme / başlangıç alanı (home) -->
+    <model name="zone_home"><static>true</static><pose>-5 -3 0.001 0 0 0</pose>
+      <link name="l"><visual name="v"><geometry><box><size>1.0 1.0 0.002</size></box></geometry>
+      <material><ambient>0.2 0.6 0.9 1</ambient></material></visual></link></model>
+
+    <!-- Alma noktaları P1, P2, P3 -->
+    <model name="zone_p1"><static>true</static><pose>-2 3 0.001 0 0 0</pose>
+      <link name="l"><visual name="v"><geometry><box><size>0.8 0.8 0.002</size></box></geometry>
+      <material><ambient>0.2 0.8 0.2 1</ambient></material></visual></link></model>
+    <model name="zone_p2"><static>true</static><pose>0 3 0.001 0 0 0</pose>
+      <link name="l"><visual name="v"><geometry><box><size>0.8 0.8 0.002</size></box></geometry>
+      <material><ambient>0.2 0.8 0.2 1</ambient></material></visual></link></model>
+    <model name="zone_p3"><static>true</static><pose>2 3 0.001 0 0 0</pose>
+      <link name="l"><visual name="v"><geometry><box><size>0.8 0.8 0.002</size></box></geometry>
+      <material><ambient>0.2 0.8 0.2 1</ambient></material></visual></link></model>
+
+    <!-- Bırakma noktaları D1, D2, D3 (kapının diğer tarafında) -->
+    <model name="zone_d1"><static>true</static><pose>4 1 0.001 0 0 0</pose>
+      <link name="l"><visual name="v"><geometry><box><size>0.8 0.8 0.002</size></box></geometry>
+      <material><ambient>0.9 0.5 0.2 1</ambient></material></visual></link></model>
+    <model name="zone_d2"><static>true</static><pose>4 -1 0.001 0 0 0</pose>
+      <link name="l"><visual name="v"><geometry><box><size>0.8 0.8 0.002</size></box></geometry>
+      <material><ambient>0.9 0.5 0.2 1</ambient></material></visual></link></model>
+    <model name="zone_d3"><static>true</static><pose>4 -3 0.001 0 0 0</pose>
+      <link name="l"><visual name="v"><geometry><box><size>0.8 0.8 0.002</size></box></geometry>
+      <material><ambient>0.9 0.5 0.2 1</ambient></material></visual></link></model>
+
+    <!-- Kapı bölgesi q5 — bir engel kapı, default açık (görünmez ama çarpışabilir) -->
+    <model name="door_q5">
+      <pose>2 0 0.5 0 0 0</pose>
+      <link name="leaf">
+        <collision name="c"><geometry><box><size>0.1 1.5 1.0</size></box></geometry></collision>
+        <visual name="v"><geometry><box><size>0.1 1.5 1.0</size></box></geometry>
+        <material><ambient>0.6 0.1 0.1 1</ambient></material></visual>
+      </link>
+      <joint name="hinge" type="prismatic">
+        <parent>world</parent><child>leaf</child>
+        <axis><xyz>0 0 1</xyz><limit><lower>0</lower><upper>1.0</upper></limit></axis>
+      </joint>
+    </model>
+
+    <!-- Örnek palet P1'in üstünde -->
+    <model name="pallet_p1">
+      <static>false</static>
+      <pose>-2 3 0.05 0 0 0</pose>
+      <link name="link">
+        <inertial><mass value="2.0"/><inertia ixx="0.01" iyy="0.01" izz="0.01" ixy="0" ixz="0" iyz="0"/></inertial>
+        <collision name="c"><geometry><box><size>0.4 0.6 0.1</size></box></geometry></collision>
+        <visual name="v"><geometry><box><size>0.4 0.6 0.1</size></box></geometry>
+        <material><ambient>0.65 0.45 0.20 1</ambient></material></visual>
+      </link>
+    </model>
+
+  </world>
+</sdf>

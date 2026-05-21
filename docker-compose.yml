@@ -1,39 +1,19 @@
-# CargoBot lokal sim ortamı.
+# CargoBot lokal simülasyon.
+#
+# Üç servis:
+#   plc-sim   Modbus TCP simulator (port 5020)
+#   ros2      Gazebo + slam_toolbox + Nav2 + cargobot URDF spawn
+#   cargobot  Python çekirdeği (--profile=sim)
 #
 # Kullanım:
-#   docker compose up         # ROS2 + Gazebo + Nav2 + slam_toolbox sahnesi
-#   docker compose run --rm cargobot   # mock akış (hostta da koşar)
+#   docker compose up
+#   docker compose up plc-sim ros2          # GUI'yi host'tan koşturmak istersen
+#   docker compose down
 #
-# X11 görselleştirme için host'ta:
+# X11 paylaşımı host'ta:
 #   xhost +local:docker
-#
-# Not: ROS2 Humble image'i ilk açılışta ~1 GB indirir.
 
 services:
-  ros2:
-    image: osrf/ros:humble-desktop-full
-    container_name: cargobot-ros2
-    network_mode: host                # /scan, /cmd_vel topic'leri için
-    environment:
-      - DISPLAY=${DISPLAY}
-      - QT_X11_NO_MITSHM=1
-      - ROS_DOMAIN_ID=42
-    volumes:
-      - /tmp/.X11-unix:/tmp/.X11-unix:rw
-      - ./sim:/workspace/sim
-      - ./hardware/urdf:/workspace/urdf:ro
-    command: >
-      bash -c "
-      source /opt/ros/humble/setup.bash &&
-      apt-get update && apt-get install -y --no-install-recommends
-        ros-humble-slam-toolbox
-        ros-humble-nav2-bringup
-        ros-humble-navigation2
-        ros-humble-gazebo-ros-pkgs
-        ros-humble-robot-localization &&
-      ros2 launch sim/launch/cargobot_world.launch.py
-      "
-
   plc-sim:
     image: oitc/modbus-server:latest
     container_name: cargobot-plc-sim
@@ -42,6 +22,34 @@ services:
     volumes:
       - ./sim/configs/modbus_server.json:/server_config/server_config.json:ro
 
+  ros2:
+    image: osrf/ros:humble-desktop-full
+    container_name: cargobot-ros2
+    network_mode: host
+    environment:
+      - DISPLAY=${DISPLAY:-:0}
+      - QT_X11_NO_MITSHM=1
+      - ROS_DOMAIN_ID=42
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix:rw
+      - ./sim:/workspace/sim:ro
+      - ./hardware:/workspace/hardware:ro
+    command: >
+      bash -c "
+      apt-get update &&
+      apt-get install -y --no-install-recommends
+        ros-humble-slam-toolbox
+        ros-humble-nav2-bringup
+        ros-humble-navigation2
+        ros-humble-gazebo-ros-pkgs
+        ros-humble-robot-localization
+        ros-humble-xacro &&
+      source /opt/ros/humble/setup.bash &&
+      xacro /workspace/hardware/urdf/cargobot.urdf.xacro > /tmp/cargobot.urdf &&
+      cp /tmp/cargobot.urdf /workspace/hardware/urdf/cargobot.urdf 2>/dev/null || true &&
+      ros2 launch /workspace/sim/launch/sim.launch.py
+      "
+
   cargobot:
     build:
       context: .
@@ -49,10 +57,11 @@ services:
     container_name: cargobot-core
     network_mode: host
     environment:
-      - ROS_DOMAIN_ID=42
+      - CARGOBOT_PROFILE=sim
       - PLC_HOST=localhost
       - PLC_PORT=5020
+      - ROS_DOMAIN_ID=42
     depends_on:
-      - ros2
       - plc-sim
+      - ros2
     command: ["python", "src/main.py", "--headless"]
