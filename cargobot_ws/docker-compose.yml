@@ -1,0 +1,20 @@
+# CargoBot simulasyon - docker compose
+# Linux'ta GUI (Gazebo/RViz) icin once host'ta: xhost +local:docker
+services:
+  cargobot:
+    build: .
+    image: cargobot:humble
+    container_name: cargobot_sim
+    network_mode: host
+    privileged: true
+    environment:
+      - DISPLAY=${DISPLAY}
+      - QT_X11_NO_MITSHM=1
+      - LIBGL_ALWAYS_SOFTWARE=1   # GPU yoksa yazilim render
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix:rw
+      - ./src:/ws/src:rw          # kodu canli duzenle (yeniden derle: colcon build)
+    stdin_open: true
+    tty: true
+    # Varsayilan: haritalama modu. Tam senaryo icin:
+    # command: ros2 launch cargobot_bringup simulation.launch.py slam:=false
